@@ -104,42 +104,12 @@
                 <img height="51" width="51" class="bxs-home-alt-2" src="assets/img/ICON 2.png" alt=""> Bandipur <br>Samira Homestay & Restaurant
             </a>
 
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="bx bx-home-alt-2"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="bx bx-user-pin"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#popular" class="nav__link">
-                            <i class="bx bx-building-house"></i>
-                            <span>Rooms</span>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#value" class="nav__link">
-                            <i class="bx bx-award"></i>
-                            <span>Services</span>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="bx bx-phone"></i>
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                </ul>
+            <!--Language toggle button-->
+            <div class="lang-toggle" id="lang-toggle">
+                <i class="bx bx-globe lang-icon"></i>
+                <span class="lang-option lang-active" data-lang="en">EN</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="np">नेपाली</span>
             </div>
 
             <!--Theme change button-->
@@ -150,6 +120,52 @@
             </a>
         </nav>
     </header>
+
+    <!--==================== MOBILE NAV (outside header) ====================-->
+    <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#home" class="nav__link active-link">
+                    <i class="bx bx-home-alt-2"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="#about" class="nav__link">
+                    <i class="bx bx-user-pin"></i>
+                    <span>About</span>
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a href="#popular" class="nav__link">
+                    <i class="bx bx-building-house"></i>
+                    <span>Rooms</span>
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a href="#tariff" class="nav__link">
+                    <i class="bx bx-purchase-tag"></i>
+                    <span>Pricing</span>
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a href="#value" class="nav__link">
+                    <i class="bx bx-award"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">
+                    <i class="bx bx-phone"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <!--==================== MAIN ====================-->
     <main class="main">
@@ -228,7 +244,7 @@
                     <a href="https://www.makemytrip.com/hotels-international/en-us/nepal/gandaki-hotels/bandipur_samira_homestay_experience_the_best_for_less-details.html"
                         target="_blank" style="all:unset"> <img src="assets/img/logo3.png" alt=""> </a>
                 </div>
-                <br>
+                <br class="logos__break">
                 <div class="logos__img" padding-left="50px">
                     <a href="https://www.agoda.com/bandipur-samira-homestay/hotel/bandipur-np.html?cid=1844104"
                         target="_blank" style="all:unset"> <img src="assets/img/logo4.png" alt=""> </a>
@@ -373,17 +389,16 @@
                                 <h2 class="popular__price">
                                     <span>NPR </span>1,500<small>/night</small>
                                 </h2>
+                                <small class="room-price-note">With Breakfast: NPR 2,200</small>
                                 <h3 class="popular__title">
                                     Couple / Double Room
                                 </h3>
                                 <p class="popular__description">
-                                    • Occupancy 2 people • 1 couple bed• Private shower  • Cozy traditional decor • Enhanced
-                                    amenities and more...
+                                    • Occupancy 2 people • 1 couple bed • Private shower • Cozy traditional decor
                                 </p>
-                                <div
-                                    style="display:flex; justify-content: center; align-items: center; padding-top: 25px;">
-                                    <button class="button" id="bookingButton" onclick="myFunction()"
-                                        style="cursor:pointer;">BOOK NOW</button>
+                                <div class="popular__card-actions">
+                                    <button class="button button--sm" onclick="openTariffModal()" style="cursor:pointer;">View Tariff</button>
+                                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
                                 </div>
                             </div>
                         </article>
@@ -391,15 +406,9 @@
                         <!-- Economy Toilet-->
                         <article class="popular__card swiper-slide">
                             <img src="assets/img/rooms/toilet5.jpg" alt="Economy Toilet" class="popular__img">
-
                             <div class="popular__data">
-                                <h2 class="popular__price">
-            
-                                </h2>
-                                <h3 class="popular__title">
-                                    
-                                </h3>
-                                
+                                <h2 class="popular__price"></h2>
+                                <h3 class="popular__title"></h3>
                             </div>
                         </article>
 
@@ -409,36 +418,31 @@
 
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>NPR </span>1,500<small>/night</small>
+                                    <span>NPR </span>1,300<small>/night</small>
                                 </h2>
+                                <small class="room-price-note">With Breakfast: NPR 1,700</small>
                                 <h3 class="popular__title">
-                                    Couple / Double Room
+                                    Single Room
                                 </h3>
                                 <p class="popular__description">
-                                    • Essential • Private bathroom • Single or double options • Enhanced amenities and
-                                    more...
+                                    • Occupancy 1 person • Private bathroom • Single bed • Enhanced amenities
                                 </p>
-                                <div
-                                    style="display:flex; justify-content: center; align-items: center; padding-top: 25px;">
-                                    <button class="button" id="bookingButton" onclick="myFunction()"
-                                        style="cursor:pointer;">BOOK NOW</button>
+                                <div class="popular__card-actions">
+                                    <button class="button button--sm" onclick="openTariffModal()" style="cursor:pointer;">View Tariff</button>
+                                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
                                 </div>
                             </div>
                         </article>
+
                         <!-- Basic Room Toilet-->
                         <article class="popular__card swiper-slide">
                             <img src="assets/img/rooms/toilet3.jpg" alt="Basic Room Toilet" class="popular__img">
-
                             <div class="popular__data">
-                                <h2 class="popular__price">
-            
-                                </h2>
-                                <h3 class="popular__title">
-                                    
-                                </h3>
-                                
+                                <h2 class="popular__price"></h2>
+                                <h3 class="popular__title"></h3>
                             </div>
                         </article>
+
                         <!-- Comfort Room -->
                         <article class="popular__card swiper-slide">
                             <img src="assets/img/rooms/comfort.jpg" alt="Comfort Room" class="popular__img">
@@ -447,31 +451,26 @@
                                 <h2 class="popular__price">
                                     <span>NPR </span>1,500<small>/night</small>
                                 </h2>
+                                <small class="room-price-note">With Breakfast: NPR 2,200</small>
                                 <h3 class="popular__title">
-                                    Comfort Room
+                                    Couple / Double Room
                                 </h3>
                                 <p class="popular__description">
-                                    • Mountain view • Private bathroom • Mountain air • Enhanced amenities and more...
+                                    • Mountain view • Private bathroom • Mountain air • Enhanced amenities
                                 </p>
-                                <div
-                                    style="display:flex; justify-content: center; align-items: center; padding-top: 25px;">
-                                    <button class="button" id="bookingButton" onclick="myFunction()"
-                                        style="cursor:pointer;">BOOK NOW</button>
+                                <div class="popular__card-actions">
+                                    <button class="button button--sm" onclick="openTariffModal()" style="cursor:pointer;">View Tariff</button>
+                                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
                                 </div>
                             </div>
                         </article>
+
                         <!-- Comfort Room Toilet-->
                         <article class="popular__card swiper-slide">
-                            <img src="assets/img/rooms/toilet1.jpg" alt="Basic Room Toilet" class="popular__img">
-
+                            <img src="assets/img/rooms/toilet1.jpg" alt="Comfort Room Toilet" class="popular__img">
                             <div class="popular__data">
-                                <h2 class="popular__price">
-            
-                                </h2>
-                                <h3 class="popular__title">
-                                    
-                                </h3>
-                                
+                                <h2 class="popular__price"></h2>
+                                <h3 class="popular__title"></h3>
                             </div>
                         </article>
 
@@ -484,33 +483,26 @@
                                 <h2 class="popular__price">
                                     <span>NPR </span>2,000<small>/night</small>
                                 </h2>
+                                <small class="room-price-note">With Breakfast: NPR 3,100</small>
                                 <h3 class="popular__title">
                                     Family / Triple Room
                                 </h3>
                                 <p class="popular__description">
-                                    • Occupancy 3 people • Panoramic Himalayas • Private shower • 1 single + 1 double bed • Enhanced
-                                    amenities and more...
+                                    • Occupancy 3 people • Panoramic Himalayas • Private shower • 1 single + 1 double bed
                                 </p>
-                                <div
-                                    style="display:flex; justify-content: center; align-items: center; padding-top: 25px;">
-                                    <button class="button" id="bookingButton" onclick="myFunction()"
-                                        style="cursor:pointer;">BOOK NOW</button>
+                                <div class="popular__card-actions">
+                                    <button class="button button--sm" onclick="openTariffModal()" style="cursor:pointer;">View Tariff</button>
+                                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
                                 </div>
                             </div>
                         </article>
 
-                        <!-- Comfort Room Toilet-->
+                        <!-- Family Mountain Toilet-->
                         <article class="popular__card swiper-slide">
-                            <img src="assets/img/rooms/toilet2.jpg" alt="Basic Room Toilet" class="popular__img">
-
+                            <img src="assets/img/rooms/toilet2.jpg" alt="Family Room Toilet" class="popular__img">
                             <div class="popular__data">
-                                <h2 class="popular__price">
-            
-                                </h2>
-                                <h3 class="popular__title">
-                                    
-                                </h3>
-                                
+                                <h2 class="popular__price"></h2>
+                                <h3 class="popular__title"></h3>
                             </div>
                         </article>
 
@@ -522,17 +514,16 @@
                                 <h2 class="popular__price">
                                     <span>NPR </span>2,000<small>/night</small>
                                 </h2>
+                                <small class="room-price-note">With Breakfast: NPR 3,100</small>
                                 <h3 class="popular__title">
                                     Family / Triple Room
                                 </h3>
                                 <p class="popular__description">
-                                    • Multiple beds(3 person) • Shared bathroom • Ideal for groups • Cultural decor • Enhanced
-                                    amenities and more...
+                                    • Multiple beds (3 person) • Shared bathroom • Ideal for groups • Cultural decor
                                 </p>
-                                <div
-                                    style="display:flex; justify-content: center; align-items: center; padding-top: 25px;">
-                                    <button class="button" id="bookingButton" onclick="myFunction()"
-                                        style="cursor:pointer;">BOOK NOW</button>
+                                <div class="popular__card-actions">
+                                    <button class="button button--sm" onclick="openTariffModal()" style="cursor:pointer;">View Tariff</button>
+                                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
                                 </div>
                             </div>
                         </article>
@@ -540,15 +531,9 @@
                         <!-- Family Room Toilet-->
                         <article class="popular__card swiper-slide">
                             <img src="assets/img/rooms/toilet4.jpg" alt="Family Room Toilet" class="popular__img">
-
                             <div class="popular__data">
-                                <h2 class="popular__price">
-            
-                                </h2>
-                                <h3 class="popular__title">
-                                    
-                                </h3>
-                                
+                                <h2 class="popular__price"></h2>
+                                <h3 class="popular__title"></h3>
                             </div>
                         </article>
                     </div>
@@ -562,6 +547,242 @@
                 </div>
             </div>
         </section>
+
+        <!--==================== TARIFF & PACKAGES ====================-->
+        <section class="tariff section" id="tariff">
+            <div class="container">
+                <span class="section__subtitle">Transparent Pricing</span>
+                <h2 class="section__title">
+                    Tariff & Packages<span>.</span>
+                </h2>
+                <p class="tariff__intro">
+                    Affordable rates for every traveler. Choose room-only or all-inclusive group packages.
+                </p>
+
+                <!-- Tariff Tabs -->
+                <div class="tariff__tabs">
+                    <button class="tariff__tab tariff__tab--active" data-tab="rooms">Room Tariff</button>
+                    <button class="tariff__tab" data-tab="groups">Group Packages</button>
+                </div>
+
+                <!-- Room Tariff Content -->
+                <div class="tariff__content tariff__content--active" id="tab-rooms">
+                    <div class="tariff__grid">
+                        <!-- With Breakfast -->
+                        <div class="tariff__table-card">
+                            <div class="tariff__table-header">
+                                <i class="bx bx-coffee"></i>
+                                <h3>Room Tariff <small>(Including Breakfast)</small></h3>
+                            </div>
+                            <table class="tariff__table">
+                                <thead>
+                                    <tr>
+                                        <th>Room Type</th>
+                                        <th>Capacity</th>
+                                        <th>Rate (NPR)/Night</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Single Room</td>
+                                        <td>1 Person</td>
+                                        <td><strong>Rs. 1,700</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Couple Room</td>
+                                        <td>2 Persons</td>
+                                        <td><strong>Rs. 2,200</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Triple Room</td>
+                                        <td>3 Persons</td>
+                                        <td><strong>Rs. 3,100</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Without Breakfast -->
+                        <div class="tariff__table-card">
+                            <div class="tariff__table-header">
+                                <i class="bx bx-bed"></i>
+                                <h3>Room Tariff <small>(Room Only &ndash; Without Breakfast)</small></h3>
+                            </div>
+                            <table class="tariff__table">
+                                <thead>
+                                    <tr>
+                                        <th>Room Type</th>
+                                        <th>Capacity</th>
+                                        <th>Rate (NPR)/Night</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Single Room</td>
+                                        <td>1 Person</td>
+                                        <td><strong>Rs. 1,300</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Couple Room</td>
+                                        <td>2 Persons</td>
+                                        <td><strong>Rs. 1,500</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Triple Room</td>
+                                        <td>3 Persons</td>
+                                        <td><strong>Rs. 2,000</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group Package Content -->
+                <div class="tariff__content" id="tab-groups">
+                    <div class="tariff__grid">
+                        <!-- Nepalese -->
+                        <div class="tariff__table-card">
+                            <div class="tariff__table-header">
+                                <i class="bx bx-flag"></i>
+                                <h3>Group Package &ndash; Nepalese</h3>
+                            </div>
+                            <p class="tariff__table-note">
+                                <i class="bx bx-check-circle"></i> Rates per person &bull; Includes Chicken Dinner, Room &amp; Morning Breakfast<br>
+                                <i class="bx bx-info-circle"></i> Bed shared: double-to-double, single-to-single
+                            </p>
+                            <table class="tariff__table">
+                                <thead>
+                                    <tr>
+                                        <th>Group Size</th>
+                                        <th>Rate (NPR) Per Person/Night</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2 &ndash; 10 Persons</td>
+                                        <td><strong>Rs. 1,400</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11 &ndash; 18 Persons</td>
+                                        <td><strong>Rs. 1,200</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>More than 30 Persons</td>
+                                        <td><strong>Rs. 1,000</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Foreigners -->
+                        <div class="tariff__table-card">
+                            <div class="tariff__table-header">
+                                <i class="bx bx-globe"></i>
+                                <h3>Group Package &ndash; Foreigners</h3>
+                            </div>
+                            <p class="tariff__table-note">
+                                <i class="bx bx-check-circle"></i> Rates per person &bull; Includes Chicken Dinner, Room &amp; Morning Breakfast<br>
+                                <i class="bx bx-info-circle"></i> Bed shared: double-to-double, single-to-single
+                            </p>
+                            <table class="tariff__table">
+                                <thead>
+                                    <tr>
+                                        <th>Group Size</th>
+                                        <th>Rate (NPR) Per Person/Night</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2 &ndash; 10 Persons</td>
+                                        <td><strong>Rs. 1,800</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11 &ndash; 18 Persons</td>
+                                        <td><strong>Rs. 1,600</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tariff__cta">
+                    <p class="tariff__tagline"><em>"Your Next Home in Bandipur &mdash; Come as Guests, Leave Being Family Members."</em></p>
+                    <button class="button" onclick="myFunction()" style="cursor:pointer;">BOOK NOW</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tariff Detail Popup Modal -->
+        <div id="tariffModal" class="modal"
+            style="display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); overflow-y:auto;">
+            <div class="modal-content"
+                style="margin:5% auto; padding:25px; border-radius:12px; width:92%; max-width:750px; position:relative;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 class="tariff-modal-title" style="margin: 0; font-size: 1.25rem;"><i class="bx bx-purchase-tag" style="color: var(--first-color);"></i> Full Tariff Details</h3>
+                    <span class="tariff-close">&times;</span>
+                </div>
+
+                <!-- Room Tariff With Breakfast -->
+                <div class="tariff-modal-section">
+                    <h4 class="tariff-modal-heading"><i class="bx bx-coffee"></i> Room Tariff (Including Breakfast)</h4>
+                    <table class="tariff-modal-table">
+                        <thead><tr><th>Room Type</th><th>Capacity</th><th>Rate/Night</th></tr></thead>
+                        <tbody>
+                            <tr><td>Single Room</td><td>1 Person</td><td>Rs. 1,700</td></tr>
+                            <tr><td>Couple Room</td><td>2 Persons</td><td>Rs. 2,200</td></tr>
+                            <tr><td>Triple Room</td><td>3 Persons</td><td>Rs. 3,100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Room Tariff Without Breakfast -->
+                <div class="tariff-modal-section">
+                    <h4 class="tariff-modal-heading"><i class="bx bx-bed"></i> Room Tariff (Room Only &ndash; Without Breakfast)</h4>
+                    <table class="tariff-modal-table">
+                        <thead><tr><th>Room Type</th><th>Capacity</th><th>Rate/Night</th></tr></thead>
+                        <tbody>
+                            <tr><td>Single Room</td><td>1 Person</td><td>Rs. 1,300</td></tr>
+                            <tr><td>Couple Room</td><td>2 Persons</td><td>Rs. 1,500</td></tr>
+                            <tr><td>Triple Room</td><td>3 Persons</td><td>Rs. 2,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Group Nepalese -->
+                <div class="tariff-modal-section">
+                    <h4 class="tariff-modal-heading"><i class="bx bx-flag"></i> Group Package &ndash; Nepalese</h4>
+                    <p class="tariff-modal-note">Per person &bull; Includes Chicken Dinner, Room &amp; Morning Breakfast &bull; Bed shared: double-to-double, single-to-single</p>
+                    <table class="tariff-modal-table">
+                        <thead><tr><th>Group Size</th><th>Rate Per Person/Night</th></tr></thead>
+                        <tbody>
+                            <tr><td>2 &ndash; 10 Persons</td><td>Rs. 1,400</td></tr>
+                            <tr><td>11 &ndash; 18 Persons</td><td>Rs. 1,200</td></tr>
+                            <tr><td>More than 30 Persons</td><td>Rs. 1,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Group Foreigners -->
+                <div class="tariff-modal-section">
+                    <h4 class="tariff-modal-heading"><i class="bx bx-globe"></i> Group Package &ndash; Foreigners</h4>
+                    <p class="tariff-modal-note">Per person &bull; Includes Chicken Dinner, Room &amp; Morning Breakfast &bull; Bed shared: double-to-double, single-to-single</p>
+                    <table class="tariff-modal-table">
+                        <thead><tr><th>Group Size</th><th>Rate Per Person/Night</th></tr></thead>
+                        <tbody>
+                            <tr><td>2 &ndash; 10 Persons</td><td>Rs. 1,800</td></tr>
+                            <tr><td>11 &ndash; 18 Persons</td><td>Rs. 1,600</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tariff-modal-footer" style="text-align:center; margin-top:20px; padding-top:15px;">
+                    <p class="tariff-modal-tagline">"Come as Guests, Leave Being Family Members."</p>
+                    <button class="button" onclick="closeTariffModal(); myFunction();" style="cursor:pointer;">BOOK NOW</button>
+                </div>
+            </div>
+        </div>
 
         <div id="bookingModal" class="modal"
             style="display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7);">
@@ -735,7 +956,7 @@
                                 </p>
                             </div>
                         </div>
-                        <p class="value__description">Note: Special Offers for Group Packages!</p>
+                        <p class="value__description">Note: Special Offers for Group Packages! <a href="#tariff" style="color: var(--first-color); text-decoration: underline; cursor:pointer;">View our Tariff &rarr;</a></p>
                     </div>
                 </div>
             </div>
@@ -753,7 +974,21 @@
             <div class="swiper-wrapper">
 
                 <article class="popular__card swiper-slide">
-                    <img src="assets/img/gallery/gallery2.jpg" alt="Economy Double Room"
+                    <img src="assets/img/gallery/gallery4.jpg" alt="Economy Double Room"
+                        class="gallery__img">
+
+                </article><article class="popular__card swiper-slide">
+                    <img src="assets/img/gallery/gallery7.jpg" alt="Economy Double Room"
+                        class="gallery__img">
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="assets/img/gallery/gallery8.jpg" alt="Economy Double Room"
+                        class="gallery__img">
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="assets/img/gallery/gallery9.jpg" alt="Economy Double Room"
                         class="gallery__img">
                 </article>
                 
@@ -1196,11 +1431,74 @@ document.getElementById('locationSearch').addEventListener('keypress', function(
   }
 });
 
+        /*=============== TARIFF TABS ===============*/
+        document.addEventListener('DOMContentLoaded', function () {
+            const tariffTabs = document.querySelectorAll('.tariff__tab');
+            const tariffContents = document.querySelectorAll('.tariff__content');
+
+            tariffTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remove active from all
+                    tariffTabs.forEach(t => t.classList.remove('tariff__tab--active'));
+                    tariffContents.forEach(c => c.classList.remove('tariff__content--active'));
+
+                    // Activate clicked
+                    this.classList.add('tariff__tab--active');
+                    const target = document.getElementById('tab-' + this.getAttribute('data-tab'));
+                    if (target) target.classList.add('tariff__content--active');
+                });
+            });
+        });
+
+        /*=============== TARIFF MODAL ===============*/
+        function openTariffModal() {
+            const modal = document.getElementById('tariffModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // Trigger reflow for animation
+            modal.offsetHeight;
+            modal.classList.add('modal-active');
+        }
+
+        function closeTariffModal() {
+            const modal = document.getElementById('tariffModal');
+            modal.classList.remove('modal-active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Close tariff modal handlers
+        document.addEventListener('DOMContentLoaded', function () {
+            const tariffModal = document.getElementById('tariffModal');
+            const tariffClose = document.querySelector('.tariff-close');
+
+            if (tariffClose) {
+                tariffClose.addEventListener('click', closeTariffModal);
+            }
+
+            window.addEventListener('click', function (event) {
+                if (event.target === tariffModal) {
+                    closeTariffModal();
+                }
+            });
+            
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && tariffModal.style.display === 'block') {
+                    closeTariffModal();
+                }
+            });
+        });
+
 
         // This function will be called when button is clicked
         function myFunction() {
             const modal = document.getElementById("bookingModal");
             modal.style.display = "block";
+            modal.offsetHeight;
+            modal.classList.add('modal-active');
         }
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -1209,15 +1507,27 @@ document.getElementById('locationSearch').addEventListener('keypress', function(
             const span = document.querySelector(".close");
             const options = document.querySelectorAll(".booking-option");
 
+            function closeBookingModal() {
+                modal.classList.remove('modal-active');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                }, 300);
+            }
+
             // Close modal
-            span.addEventListener('click', function () {
-                modal.style.display = "none";
-            });
+            span.addEventListener('click', closeBookingModal);
 
             // Close when clicking outside
             window.addEventListener('click', function (event) {
                 if (event.target === modal) {
-                    modal.style.display = "none";
+                    closeBookingModal();
+                }
+            });
+            
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeBookingModal();
                 }
             });
 
@@ -1225,7 +1535,7 @@ document.getElementById('locationSearch').addEventListener('keypress', function(
             options.forEach(option => {
                 option.addEventListener('click', function () {
                     const service = this.getAttribute('data-service');
-                    modal.style.display = "none";
+                    closeBookingModal();
 
                     if (service === 'default') {
                         window.open(`https://www.airbnb.com/rooms/41207878?guests=1&adults=1&s=67&unique_share_id=25714a39-11f9-47e9-b491-94325e02db14`, '_blank');
