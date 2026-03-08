@@ -326,7 +326,7 @@ body.dark-theme{
 
   .change-theme {
     position: fixed;
-    top: 1.5rem;
+    top: 1rem;
     right: 1rem;
     z-index: 9999;
     background-color: var(--container-color);
@@ -342,7 +342,7 @@ body.dark-theme{
 
   .lang-toggle {
     position: fixed;
-    top: 1.5rem;
+    top: 1rem;
     right: 3.75rem;
     z-index: 9999;
     background-color: var(--container-color);
@@ -1195,7 +1195,7 @@ body.dark-theme{
   .change-theme{
     position: fixed;
     top: 1.9rem;
-    right: 32rem;
+    right: 36rem;
     color: var(--text-color-light);
     z-index: 9999;
   }
@@ -1207,7 +1207,7 @@ body.dark-theme{
   .lang-toggle {
     position: fixed;
     top: 1.65rem;
-    right: 24rem;
+    right: 28rem;
     z-index: 9999;
     background-color: transparent;
     padding: 0;
