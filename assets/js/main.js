@@ -28,6 +28,7 @@ var swiperPopular = new Swiper(".popular__container", {
     loop: true,
     autoplay: {
       delay: 2000,
+      disableOnInteraction: false,
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -170,18 +171,18 @@ const translations = {
         // About Section
         aboutSubtitle: 'Our Story',
         aboutTitle: 'Why Samira Homestay',
-        aboutDesc: 'Located in Nepal\'s ancient hilltop gem, we offer authentic Newari hospitality. Wake up to Himalayan sunrises, savor home-cooked dal bhat, and explore cobblestone streets unchanged for centuries.',
+        aboutDesc: 'Located in Nepal\'s ancient hilltop gem, we offer authentic hospitality. Wake up to Himalayan sunrises, savor home-cooked dal bhat, and explore cobblestone streets unchanged for centuries.',
         aboutYears: 'Years',
         aboutExperience: 'Experience',
         aboutLearnMore: 'Learn More',
-        aboutAccordion1Title: 'Traditional Newari Experience',
-        aboutAccordion1Desc: 'Stay in a lovingly restored Newari home where every wooden beam tells a story. Our rooms blend traditional architecture with modern comforts, featuring local artifacts and handwoven textiles.',
-        aboutAccordion2Title: 'Farm-to-Table Cuisine',
-        aboutAccordion2Desc: 'Taste Bandipur\'s heritage through home-cooked meals using organic ingredients from our garden. Enjoy traditional dishes like Newari samay baji, sel roti, and freshly brewed local coffee on our terrace.',
+        aboutAccordion1Title: 'Traditional Mountain Experience',
+        aboutAccordion1Desc: 'Stay in a lovingly restored heritage home where every wooden beam tells a story. Our rooms blend traditional architecture with modern comforts, featuring local artifacts and handwoven textiles.',
+        aboutAccordion2Title: 'Traditional Home-Cooked Meals',
+        aboutAccordion2Desc: 'Savor the flavors of Nepal with our authentic home-cooked meals. Enjoy our signature Thakali set prepared with hand-made masalas, fresh dal bhat, sel roti, and locally brewed coffee on our terrace.',
         aboutAccordion3Title: 'In the Lap of the Himalayas',
-        aboutAccordion3Desc: 'Wake up to panoramic mountain views from your window. Our homestay sits nestled in Bandipur\'s hills, where crisp mountain air and golden sunrises over the Annapurnas greet you each morning.',
+        aboutAccordion3Desc: 'Wake up to panoramic mountain views from your window. Our homestay is nestled in Bandipur\'s hills, where crisp mountain air and golden sunrises over the Annapurnas greet you each morning.',
         aboutAccordion4Title: 'Premium Hospitality',
-        aboutAccordion4Desc: 'Handpicked organic linens, locally-sourced mountain cuisine, and personalized trekking advice. We blend rustic charm with thoughtful service for an unforgettable mountain retreat.',
+        aboutAccordion4Desc: 'Quality linens, locally sourced mountain cuisine, and personalized trekking advice. We blend rustic charm with thoughtful service for an unforgettable mountain retreat.',
         
         // Rooms Section
         roomsSubtitle: 'Experience Bandipur',
@@ -366,18 +367,18 @@ const translations = {
         // About Section
         aboutSubtitle: 'हाम्रो कथा',
         aboutTitle: 'किन समिरा होमस्टे',
-        aboutDesc: 'नेपालको प्राचीन पहाडको शिखरमा अवस्थित, हामी प्रामाणिक नेवारी आतिथ्य प्रदान गर्दछौं। हिमालयी सूर्योदयको साथ बिहान उठ्नुहोस्, घरमा पकाएको दाल भात खानुहोस्।',
+        aboutDesc: 'नेपालको प्राचीन पहाडको शिखरमा अवस्थित, हामी प्रामाणिक आतिथ्य प्रदान गर्दछौं। हिमालयी सूर्योदयको साथ बिहान उठ्नुहोस्, घरमा पकाएको दाल भात खानुहोस्।',
         aboutYears: 'वर्ष',
         aboutExperience: 'अनुभव',
         aboutLearnMore: 'थप जान्नुहोस्',
-        aboutAccordion1Title: 'परम्परागत नेवारी अनुभव',
-        aboutAccordion1Desc: 'मायालुपूर्वक पुनर्स्थापित नेवारी घरमा बस्नुहोस् जहाँ प्रत्येक काठको धामले एउटा कथा बताउँछ।',
-        aboutAccordion2Title: 'फार्मदेखि टेबलसम्म',
-        aboutAccordion2Desc: 'हाम्रो बगैंचाबाट जैविक सामग्री प्रयोग गरेर घरमा पकाएको खानाबाट बन्दीपुरको सम्पदाको स्वाद लिनुहोस्।',
+        aboutAccordion1Title: 'परम्परागत पहाडी अनुभव',
+        aboutAccordion1Desc: 'मायालुपूर्वक पुनर्स्थापित विरासती घरमा बस्नुहोस् जहाँ प्रत्येक काठको धामले एउटा कथा बताउँछ।',
+        aboutAccordion2Title: 'परम्परागत घरेलु खाना',
+        aboutAccordion2Desc: 'हाम्रो प्रामाणिक घरेलु खानाको स्वाद लिनुहोस्। हातेले बनाएको मसलासहित थकाली सेट, ताजा दाल भात, सेल रोटी, र स्थानीय कफीको आनन्द लिनुहोस्।',
         aboutAccordion3Title: 'हिमालको काखमा',
         aboutAccordion3Desc: 'आफ्नो झ्यालबाट विस्तृत पहाडको दृश्य देख्दै बिहान उठ्नुहोस्। हाम्रो होमस्टे बन्दीपुरको पहाडमा बसेको छ।',
         aboutAccordion4Title: 'उत्कृष्ट आतिथ्य',
-        aboutAccordion4Desc: 'छानिएका जैविक लिनेन, स्थानीय स्रोतको पहाडी खाना, र व्यक्तिगत ट्रेकिङ सल्लाह।',
+        aboutAccordion4Desc: 'गुणस्तरीय लिनेन, स्थानीय स्रोतको पहाडी खाना, र व्यक्तिगत ट्रेकिङ सल्लाह।',
         
         // Rooms Section
         roomsSubtitle: 'बन्दीपुरको अनुभव',
