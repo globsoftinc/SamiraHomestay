@@ -186,7 +186,7 @@ const translations = {
         // Rooms Section
         roomsSubtitle: 'Experience Bandipur',
         roomsTitle: 'Our Accommodations',
-        perNight: '/night',
+        perNight: '/Night',
         withBreakfast: 'With Breakfast: NPR',
         viewTariff: 'View Tariff',
         singleRoom: 'Single Room',
