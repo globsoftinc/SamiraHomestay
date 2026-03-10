@@ -411,8 +411,8 @@ body.dark-theme{
 /*=============== HOME ===============*/
 .home{
   background: linear-gradient(170deg,
-              rgba(0, 0, 0, 0.7) 0%,
-              rgba(0, 0, 0, 0.8) 100%),
+              rgba(0, 0, 0, 0.5) 0%,
+              rgba(0, 0, 0, 0.6) 100%),
               url('../img/bg-img.jpg');
   background-size: cover;
   background-position: top center;

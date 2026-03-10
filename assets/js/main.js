@@ -161,7 +161,7 @@ const translations = {
         // Home Section
         homeTitle: 'Welcome to',
         homeTitleSub: 'Bandipur Samira Homestay',
-        homeDesc: 'Your next holiday home in Bandipur, far from your home.',
+        homeDesc: 'Your Next Holiday Home in Bandipur. <br><br><em>Come as a <strong>Guest</strong>, Leave as a <strong>Family Member</strong></em>',
         searchPlaceholder: 'Enter your location to find us...',
         searchBtn: 'Search',
         statsRooms: 'Rooms',
@@ -190,14 +190,14 @@ const translations = {
         perNight: '/Night',
         withBreakfast: 'With Breakfast: NPR',
         viewTariff: 'View Tariff',
-        singleRoom: 'Single Room',
+        singleRoom: 'Single / Double Room',
         coupleRoom: 'Couple / Double Room',
-        comfortRoom: 'Couple Comfort Room',
+        comfortRoom: 'Couple / Single Room',
         mountainRoom: 'Mountain View Room',
         familyRoom: 'Family / Triple Room',
-        singleDesc: '• Occupancy 1 person • Private bathroom • Single bed • Enhanced amenities',
+        singleDesc: '• Occupancy 1 or 2 person • Private bathroom • Single bed • Enhanced amenities',
         coupleDesc: '• Occupancy 2 people • 1 couple bed • Private shower • Cozy traditional decor',
-        comfortDesc: '• Mountain view • Private bathroom • Mountain air • Enhanced amenities',
+        comfortDesc: '• Occupancy 2 or 1 people • Private bathroom • Mountain air • Enhanced amenities',
         coupleAltDesc: '• Mountain view • Private bathroom • Mountain air • Enhanced amenities',
         mountainDesc: '• Occupancy 3 people • Panoramic Himalayas • Private shower • 1 single + 1 double bed',
         familyDesc: '• Multiple beds (3 person) • Shared bathroom • Ideal for groups • Cultural decor',
@@ -357,7 +357,7 @@ const translations = {
         // Home Section
         homeTitle: 'स्वागत छ',
         homeTitleSub: 'बन्दीपुर समिरा होमस्टेमा',
-        homeDesc: 'बन्दीपुरमा तपाईंको अर्को बिदाको घर, तपाईंको घरबाट टाढा।',
+        homeDesc: 'बन्दीपुरमा तपाईंको अर्को बिदाको घर । <br><br><em><strong>पाहुना</strong> भएर आउनुहोस्, <strong>परिवारको सदस्य</strong> भएर जानुहोस्</em>',
         searchPlaceholder: 'हामीलाई भेट्न आफ्नो स्थान प्रविष्ट गर्नुहोस्...',
         searchBtn: 'खोज्नुहोस्',
         statsRooms: 'कोठाहरू',
@@ -596,7 +596,7 @@ function applyLanguage(lang) {
     }
     
     const homeDesc = document.querySelector('.home__description')
-    if (homeDesc) homeDesc.textContent = t.homeDesc
+    if (homeDesc) homeDesc.innerHTML = t.homeDesc
     
     const searchInput = document.querySelector('.home__search-input')
     if (searchInput) searchInput.placeholder = t.searchPlaceholder
