@@ -1,9 +1,21 @@
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () =>{
     const header = document.getElementById('header')
+    const navMenu = document.getElementById('nav-menu')
+    const themeButton = document.getElementById('theme-button')
+    const langToggle = document.getElementById('lang-toggle')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+    if(this.scrollY >= 50) {
+        header.classList.add('scroll-header')
+        if(navMenu) navMenu.classList.add('scroll-nav')
+        if(themeButton) themeButton.classList.add('scroll-theme')
+        if(langToggle) langToggle.classList.add('scroll-lang')
+    } else {
+        header.classList.remove('scroll-header')
+        if(navMenu) navMenu.classList.remove('scroll-nav')
+        if(themeButton) themeButton.classList.remove('scroll-theme')
+        if(langToggle) langToggle.classList.remove('scroll-lang')
+    }
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -91,6 +103,7 @@ window.addEventListener('scroll', scrollUp)
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'bx-sun'
+const heroImage = document.querySelector('.home__img img')
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
@@ -100,11 +113,24 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-moon' : 'bx bx-sun'
 
+// Function to update hero image based on theme
+const updateHeroImage = () => {
+    if (heroImage) {
+        if (document.body.classList.contains(darkTheme)) {
+            heroImage.src = 'assets/img/home-dark.jpg'
+        } else {
+            heroImage.src = 'assets/img/home.jpg'
+        }
+    }
+}
+
 // We validate if the user previously chose a topic
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
+  // Update hero image on page load based on saved theme
+  updateHeroImage()
 }
 
 // Activate / deactivate the theme manually with the button
@@ -112,6 +138,8 @@ themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
+    // Update hero image
+    updateHeroImage()
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
@@ -163,11 +191,15 @@ const translations = {
         viewTariff: 'View Tariff',
         singleRoom: 'Single Room',
         coupleRoom: 'Couple / Double Room',
+        comfortRoom: 'Couple Comfort Room',
+        mountainRoom: 'Mountain View Room',
         familyRoom: 'Family / Triple Room',
         singleDesc: '• Occupancy 1 person • Private bathroom • Single bed • Enhanced amenities',
         coupleDesc: '• Occupancy 2 people • 1 couple bed • Private shower • Cozy traditional decor',
+        comfortDesc: '• Mountain view • Private bathroom • Mountain air • Enhanced amenities',
         coupleAltDesc: '• Mountain view • Private bathroom • Mountain air • Enhanced amenities',
-        familyDesc: '• Occupancy 3 people • Panoramic Himalayas • Private shower • 1 single + 1 double bed',
+        mountainDesc: '• Occupancy 3 people • Panoramic Himalayas • Private shower • 1 single + 1 double bed',
+        familyDesc: '• Multiple beds (3 person) • Shared bathroom • Ideal for groups • Cultural decor',
         familyAltDesc: '• Multiple beds (3 person) • Shared bathroom • Ideal for groups • Cultural decor',
         
         // Tariff Section
@@ -180,7 +212,7 @@ const translations = {
         // Tariff Tables
         roomTariffWithBreakfast: 'Room Tariff',
         includingBreakfast: '(Including Breakfast)',
-        roomOnly: '(Room Only – Without Breakfast)',
+        roomOnly: '(Without Breakfast)',
         roomType: 'Room Type',
         capacity: 'Capacity',
         ratePerNight: 'Rate (NPR)/Night',
@@ -256,18 +288,26 @@ const translations = {
         reviewsSubtitle: 'Guest Experiences',
         reviewsTitle: 'What Our Guests Say',
         leaveReview: 'Leave a Review',
-        review1Title: '"A Hidden Gem in Bandipur"',
-        review1Text: '"The view of the Himalayas from our room was breathtaking. The hosts treated us like family. Their dal bhat was the best we had in Nepal!"',
-        review1Author: '- Sarah M.',
-        review2Title: '"Authentic Nepali Hospitality"',
-        review2Text: '"We fell in love with this place! The traditional Newari architecture, warm hosts, and stunning mountain views made our trip unforgettable."',
-        review2Author: '- Michael K.',
-        review3Title: '"Perfect Mountain Retreat"',
-        review3Text: '"Waking up to sunrise over the Annapurnas was magical. The homemade breakfast with local honey and fresh coffee was incredible."',
-        review3Author: '- Emily R.',
+        review1Title: '"Authentic Nepali Experience"',
+        review1Text: '"I have got a fantastic and world class customer service. I would like to recommend everyone if you really wants to have an experience adventure and typically Nepali environment then visits this place."',
+        review1Author: '- Kevizo PAUL',
+        review2Title: '"Perfect Family Getaway"',
+        review2Text: '"I planned to stay 2 nights with my family. Rakum and his team are extremely hospitable and go the extra mile. Rooms are clean and cool with good ventilation and great views."',
+        review2Author: '- Fionnbharr Sherry',
+        review3Title: '"Exceptional Service"',
+        review3Text: '"We enjoyed our few night stay here. The location is great and close to many things. The food was wonderful and fresh and the rooms were clean. The hotel is located perfectly, away from the hustle and bustle but just a 2 minute walk into the main road."',
+        review3Author: '- Tasha L',
         review4Title: '"Cultural Immersion at its Best"',
-        review4Text: '"The homestay organized a traditional Nepali cooking class for us - an absolute highlight! The rooms were cozy with authentic decor."',
+        review4Text: '"The homestay organized a traditional Nepali cooking class for us - an absolute highlight! The rooms were cozy with authentic decor. I highly recommend this hotel."',
         review4Author: '- David L.',
+        
+        // Travel & Tour Section
+        travelSubtitle: 'Explore Nepal',
+        travelTitle: 'Travel & Tour Services',
+        travelDesc: 'Let us help you explore the beauty of Nepal. Our Bandipur Samira Travel & Tour service offers comprehensive travel packages, transportation, and guided tours throughout Nepal.',
+        travelBookBtn: 'Visit Page',
+        travelCallBtn: 'Call for Enquiry',
+        travelWhatsAppBtn: 'WhatsApp Us',
         
         // Subscribe Section
         subscribeTitle: 'Experience Bandipur with Us',
@@ -347,11 +387,15 @@ const translations = {
         viewTariff: 'मूल्य हेर्नुहोस्',
         singleRoom: 'एकल कोठा',
         coupleRoom: 'जोडी / डबल कोठा',
+        comfortRoom: 'जोडी आराम कोठा',
+        mountainRoom: 'पारिवारिक पहाड दृश्य कोठा',
         familyRoom: 'पारिवारिक / ट्रिपल कोठा',
         singleDesc: '• १ व्यक्ति • निजी बाथरुम • एकल बेड • उन्नत सुविधा',
         coupleDesc: '• २ व्यक्ति • १ जोडी बेड • निजी शावर • परम्परागत सजावट',
+        comfortDesc: '• पहाडको दृश्य • निजी बाथरुम • पहाडी हावा • उन्नत सुविधा',
         coupleAltDesc: '• पहाडको दृश्य • निजी बाथरुम • पहाडी हावा • उन्नत सुविधा',
-        familyDesc: '• ३ व्यक्ति • विस्तृत हिमाल • निजी शावर • १ एकल + १ डबल बेड',
+        mountainDesc: '• ३ व्यक्ति • विस्तृत हिमाल • निजी शावर • १ एकल + १ डबल बेड',
+        familyDesc: '• धेरै बेड (३ व्यक्ति) • साझा बाथरुम • समूहका लागि उपयुक्त',
         familyAltDesc: '• धेरै बेड (३ व्यक्ति) • साझा बाथरुम • समूहका लागि उपयुक्त',
         
         // Tariff Section
@@ -440,18 +484,26 @@ const translations = {
         reviewsSubtitle: 'पाहुनाको अनुभव',
         reviewsTitle: 'हाम्रा पाहुनाहरू के भन्छन्',
         leaveReview: 'समीक्षा दिनुहोस्',
-        review1Title: '"बन्दीपुरमा लुकेको रत्न"',
-        review1Text: '"हाम्रो कोठाबाट हिमालको दृश्य अचम्मको थियो। घरधनीले हामीलाई परिवार जस्तो व्यवहार गरे। उनीहरूको दाल भात नेपालमा सबैभन्दा राम्रो थियो!"',
-        review1Author: '- सारा एम.',
-        review2Title: '"प्रामाणिक नेपाली आतिथ्य"',
-        review2Text: '"हामी यो ठाउँको प्रेममा पर्यौं! परम्परागत नेवारी वास्तुकला, न्यानो घरधनी, र अचम्मको पहाडको दृश्यले हाम्रो यात्रा अविस्मरणीय बनायो।"',
-        review2Author: '- माइकल के.',
-        review3Title: '"उत्तम पहाडी विश्राम"',
-        review3Text: '"अन्नपूर्णामाथिको सूर्योदयको साथ बिहान उठ्नु जादुई थियो। स्थानीय महसँग घरमै बनाइएको नाश्ता र ताजा कफी अद्भुत थियो।"',
-        review3Author: '- एमिली आर.',
-        review4Title: '"सांस्कृतिक अनुभव"',
+        review1Title: '"प्रामाणिक नेपाली अनुभव"',
+        review1Text: '"मैले अद्भुत र विश्वस्तरीय ग्राहक सेवा पाएँ। म सबैलाई सिफारिस गर्न चाहन्छु यदि तपाईं साँच्चिकै साहसिक अनुभव र परम्परागत नेपाली वातावरण अनुभव गर्न चाहनुहुन्छ भने यो ठाउँमा आउनुहोस्।"',
+        review1Author: '- केभिजो पौल',
+        review2Title: '"उत्तम पारिवारिक बिदा"',
+        review2Text: '"मैले मेरो परिवारसँग २ रात बस्ने योजना बनाएँ। राकुम र उनको टोली अत्यन्त आतिथ्यपूर्ण छन्। कोठाहरू सफा र शीतल छन् राम्रो हावा र उत्कृष्ट दृश्यसहित।"',
+        review2Author: '- फियोनभार शेरी',
+        review3Title: '"असाधारण सेवा"',
+        review3Text: '"हामीले यहाँ केही रातको बसाइ मनपराउँछौं। स्थान उत्कृष्ट छ र धेरै कुराहरू नजिकै छन्। खाना अद्भुत र ताजा थियो र कोठाहरू सफा थिए। होटल एकदम राम्रो स्थानमा छ।"',
+        review3Author: '- ताशा एल',
+        review4Title: '"सांस्कृतिक अनुभवको चरम"',
         review4Text: '"होमस्टेले हाम्रो लागि परम्परागत नेपाली खाना पकाउने कक्षा आयोजना गर्यो - एउटा अद्भुत अनुभव! कोठाहरू प्रामाणिक सजावटसहित आरामदायी थिए।"',
         review4Author: '- डेभिड एल.',
+        
+        // Travel & Tour Section
+        travelSubtitle: 'नेपाल अन्वेषण गर्नुहोस्',
+        travelTitle: 'यात्रा र पर्यटन सेवा',
+        travelDesc: 'नेपालको सौन्दर्य अन्वेषण गर्न हामीलाई सहयोग गर्न दिनुहोस्। हाम्रो Bandipur Samira Travel & Tour सेवाले व्यापक यात्रा प्याकेजहरू, यातायात, र नेपालभरि गाइडेड टूरहरू प्रदान गर्दछ।',
+        travelBookBtn: 'पेज हेर्नुहोस्',
+        travelCallBtn: 'सोधपुछको लागि कल गर्नुहोस्',
+        travelWhatsAppBtn: 'व्हाट्सएपमा सम्पर्क गर्नुहोस्',
         
         // Subscribe Section
         subscribeTitle: 'हामीसँग बन्दीपुरको अनुभव गर्नुहोस्',
@@ -604,9 +656,15 @@ function applyLanguage(lang) {
             if (titleText.includes('single') || titleText.includes('एकल')) {
                 title.textContent = t.singleRoom
                 if (desc) desc.textContent = t.singleDesc
+            } else if (titleText.includes('comfort') || titleText.includes('आराम')) {
+                title.textContent = t.comfortRoom
+                if (desc) desc.textContent = t.comfortDesc
             } else if (titleText.includes('couple') || titleText.includes('double') || titleText.includes('जोडी')) {
                 title.textContent = t.coupleRoom
                 if (desc) desc.textContent = t.coupleDesc
+            } else if (titleText.includes('mountain') || titleText.includes('पहाड')) {
+                title.textContent = t.mountainRoom
+                if (desc) desc.textContent = t.mountainDesc
             } else if (titleText.includes('family') || titleText.includes('triple') || titleText.includes('पारिवारिक')) {
                 title.textContent = t.familyRoom
                 if (desc) desc.textContent = t.familyDesc
@@ -807,6 +865,28 @@ function applyLanguage(lang) {
             if (author && reviewAuthorKeys[i] && t[reviewAuthorKeys[i]]) author.textContent = t[reviewAuthorKeys[i]]
         })
     }
+    
+    // Travel & Tour Section
+    const travelSubtitle = document.getElementById('travel-subtitle')
+    if (travelSubtitle) travelSubtitle.textContent = t.travelSubtitle
+    
+    const travelTitle = document.getElementById('travel-title')
+    if (travelTitle) travelTitle.innerHTML = `${t.travelTitle}<span>.</span>`
+    
+    const travelDesc = document.getElementById('travel-desc')
+    if (travelDesc) {
+        const strongText = lang === 'en' ? 'Bandipur Samira Travel & Tour' : 'बन्दीपुर समिरा ट्राभल एण्ड टूर'
+        travelDesc.innerHTML = t.travelDesc.replace('Bandipur Samira Travel & Tour', `<strong>${strongText}</strong>`)
+    }
+    
+    const travelBookBtn = document.getElementById('travel-book-btn')
+    if (travelBookBtn) travelBookBtn.textContent = t.travelBookBtn || 'Visit Page'
+    
+    const travelCallBtn = document.getElementById('travel-call-btn')
+    if (travelCallBtn) travelCallBtn.textContent = t.travelCallBtn
+    
+    const travelWhatsAppBtn = document.getElementById('travel-whatsapp-btn')
+    if (travelWhatsAppBtn) travelWhatsAppBtn.textContent = t.travelWhatsAppBtn
     
     // Subscribe Section
     const subscribeTitle = document.querySelector('.subscribe__title')
