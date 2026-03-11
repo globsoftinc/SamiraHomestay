@@ -161,7 +161,7 @@ const translations = {
         // Home Section
         homeTitle: 'Welcome to',
         homeTitleSub: 'Bandipur Samira Homestay',
-        homeDesc: 'Your Next Holiday Home in Bandipur. <br><br><em>Come as a <strong>Guest</strong>, Leave as a <strong>Family Member</strong></em>',
+        homeDesc: 'Your Next Holiday Home in Bandipur. <br><BR> <em>Come as <strong>Guests</strong>, Leave Being <strong>Family Members</strong></em>',
         searchPlaceholder: 'Enter your location to find us...',
         searchBtn: 'Search',
         statsRooms: 'Rooms',
@@ -357,7 +357,7 @@ const translations = {
         // Home Section
         homeTitle: 'स्वागत छ',
         homeTitleSub: 'बन्दीपुर समिरा होमस्टेमा',
-        homeDesc: 'बन्दीपुरमा तपाईंको अर्को बिदाको घर । <br><br><em><strong>पाहुना</strong> भएर आउनुहोस्, <strong>परिवारको सदस्य</strong> भएर जानुहोस्</em>',
+        homeDesc: 'बन्दीपुरमा तपाईंको अर्को बिदाको घर । <br><em><strong>पाहुनाहरू</strong> भएर आउनुहोस्, <strong>परिवारका सदस्यहरू</strong> भएर जानुहोस्</em>',
         searchPlaceholder: 'हामीलाई भेट्न आफ्नो स्थान प्रविष्ट गर्नुहोस्...',
         searchBtn: 'खोज्नुहोस्',
         statsRooms: 'कोठाहरू',
@@ -592,7 +592,7 @@ function applyLanguage(lang) {
     // Home Section
     const homeTitle = document.querySelector('.home__title')
     if (homeTitle) {
-        homeTitle.innerHTML = `${t.homeTitle} <br><span style="font-size: 37px;">${t.homeTitleSub}</span>`
+        homeTitle.innerHTML = `${t.homeTitle} <br><span style="font-size: 37px;">${t.homeTitleSub}</span><br><span style="font-size: 0.8rem; font-weight: normal; letter-spacing: 1px;">Regd. Pan No. 603431670</span>`
     }
     
     const homeDesc = document.querySelector('.home__description')
